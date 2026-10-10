@@ -11,7 +11,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-CW6VS6K0XL');
     </script>
 
@@ -33,18 +32,86 @@
             font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
         }
 
+        /* Permite que os links deslizem suavemente até à secção */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--off-white);
             color: var(--text-dark);
             line-height: 1.6;
         }
 
+        /* NAVBAR COM MENU */
+        .navbar {
+            background-color: var(--navy);
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            flex-direction: column; /* No mobile, logo em cima, links em baixo */
+            align-items: center;
+            gap: 1rem;
+            position: sticky; /* Fica fixa no topo ao fazer scroll */
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .navbar img {
+            max-height: 60px; /* Ligeiramente menor para não ocupar muito espaço fixa */
+            width: auto;
+            image-rendering: -webkit-optimize-contrast; 
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #A0AABF;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
         /* HERO SECTION */
         .hero {
             background-color: var(--navy);
             color: white;
-            padding: 5rem 1.5rem;
+            padding: 4rem 1.5rem;
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
             text-align: center;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .eyebrow {
+            color: var(--blue);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
 
         .hero h1 {
@@ -60,10 +127,22 @@
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #A0AABF;
-            max-width: 600px;
-            margin: 0 auto 2.5rem auto;
+            margin-bottom: 2rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            transform: translateY(-10px);
         }
 
         /* BOTÃO DE CHECKOUT */
@@ -78,6 +157,8 @@
             border-radius: 8px;
             box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
             transition: transform 0.2s, background-color 0.2s;
+            width: 100%;
+            max-width: 400px;
         }
 
         .cta-button:hover {
@@ -85,17 +166,18 @@
             background-color: #2563EB;
         }
 
-        .guarantee {
-            display: block;
+        .trust-badges {
             margin-top: 1rem;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #A0AABF;
+            line-height: 1.6;
         }
 
         /* PROBLEMA E SOLUÇÃO */
         .section {
-            padding: 4rem 1.5rem;
-            max-width: 800px;
+            /* Adicionado padding-top maior para compensar a navbar fixa ao clicar no link */
+            padding: 6rem 1.5rem 4rem 1.5rem; 
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -118,7 +200,7 @@
         }
 
         .pain-points h3 {
-            color: #DC2626; /* Vermelho para a dor */
+            color: #DC2626;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
@@ -127,11 +209,6 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
-        }
-
-        @media (min-width: 600px) {
-            .solution-grid { grid-template-columns: 1fr 1fr; }
-            .hero h1 { font-size: 3.5rem; }
         }
 
         .feature-card {
@@ -146,9 +223,32 @@
             margin-bottom: 0.5rem;
         }
 
-        /* O QUE ESTÁ INCLUSO */
+        /* BANNER ÚNICO */
+        .banner-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+            padding: 0 1rem;
+        }
+
+        .banner-img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            object-fit: contain;
+        }
+        
+        .banner-img:hover {
+            transform: scale(1.01);
+        }
+
         .includes-list {
             list-style: none;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .includes-list li {
@@ -211,23 +311,66 @@
             color: white;
             border-top: 1px solid rgba(255,255,255,0.1);
         }
+
+        /* MEDIA QUERIES PARA DESKTOP */
+        @media (min-width: 768px) {
+            .navbar {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 1rem 3rem;
+            }
+            .navbar img { 
+                max-height: 80px; 
+            }
+            .hero-container {
+                flex-direction: row;
+                text-align: left;
+            }
+            .hero h1 { font-size: 3.2rem; }
+            .cta-button { max-width: none; width: auto; }
+            .solution-grid { grid-template-columns: 1fr 1fr; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- NAVBAR COM LOGO E LINKS -->
+    <nav class="navbar">
+        <a href="#" style="display: flex; align-items: center;">
+            <img src="logoa.png" alt="Logic Study Co.">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#whats-inside">What's Inside</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+        </ul>
+    </nav>
+
     <!-- HERO SECTION -->
     <header class="hero">
-        <h1>Stop Losing Points to <br><span>Digital SAT Traps</span></h1>
-        <p>Break through your score plateau with the ultimate Active Recall system. 170+ logic-based flashcards to master Math & Reading in half the time.</p>
-        
-        <a href="https://logicstudy.gumroad.com/l/ultimate-digital-sat-prep-bundle" class="cta-button" data-gumroad-overlay-checkout="true">
-            Get Instant Access — $29.99
-        </a>
-        <span class="guarantee">📥 Instant PDF & Anki Download</span>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="eyebrow">Stop guessing what to study</div>
+                <h1>Stop Losing Points to <br><span>Digital SAT Traps</span></h1>
+                <p>Master the exact rules, formulas, and logic traps the test makers use. 170+ logic-based flashcards to boost your Math & Reading score in half the time.</p>
+                
+                <a href="https://logicstudy.gumroad.com/l/ultimate-digital-sat-prep-bundle" class="cta-button" data-gumroad-overlay-checkout="true">
+                    Get Instant Access — $29.99
+                </a>
+                <div class="trust-badges">
+                    🔒 Secure Payment via Gumroad <br>
+                    🛡️ Instant Digital PDF & Anki Download
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="Pink and White Modern Outfit Inspiration Pinterest Pin.png" alt="Ultimate Digital SAT Bundle on iPad and Laptop">
+            </div>
+        </div>
     </header>
 
-    <!-- SECTION: THE PROBLEM -->
-    <section class="section">
+    <!-- SECTION: THE PROBLEM (Adicionado ID "features") -->
+    <section class="section" id="features">
         <div class="pain-points">
             <h3>❌ The "Illusion of Competence"</h3>
             <p>You study for hours, highlight your prep books, and watch YouTube tutorials... but your practice test scores aren't moving. Why? Because the Digital SAT doesn't test how well you read; <strong>it tests how well you recognize patterns and traps under pressure.</strong> Passive reading is killing your score.</p>
@@ -247,20 +390,27 @@
         </div>
     </section>
 
-    <!-- SECTION: WHAT YOU GET -->
-    <section class="section" style="background-color: white; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB;">
-        <h2 class="section-title">What's Inside The Mega Bundle?</h2>
-        <ul class="includes-list" style="max-width: 600px; margin: 0 auto;">
-            <li><strong>SAT Math Deck (80+ Cards):</strong> Geometry, Algebra, Systems, Trig & Stats.</li>
-            <li><strong>SAT English Deck (90+ Cards):</strong> The "No Leap" Rule, Grammar Rules, Punctuation, and Logic traps.</li>
-            <li><strong>Anki Files Included:</strong> Ready-to-import `.apkg` files for automatic spaced repetition on your phone or laptop.</li>
-            <li><strong>Printable PDFs:</strong> Clean, high-resolution formats if you prefer physical study tools.</li>
-            <li><strong>Step-by-step solutions:</strong> Not just the answer, but the <i>why</i> behind it.</li>
-        </ul>
+    <!-- SECTION: WHAT YOU GET (Adicionado ID "whats-inside") -->
+    <section class="section" id="whats-inside" style="background-color: white; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB; max-width: 100%;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 class="section-title">What's Inside The Mega Bundle?</h2>
+            
+            <div class="banner-container">
+                <img src="banners.png" class="banner-img" alt="SAT Mega Bundle Flashcards">
+            </div>
+
+            <ul class="includes-list">
+                <li><strong>SAT Math Deck (80+ Cards):</strong> Geometry, Algebra, Systems, Trig & Stats.</li>
+                <li><strong>SAT English Deck (90+ Cards):</strong> The "No Leap" Rule, Grammar Rules, Punctuation, and Logic traps.</li>
+                <li><strong>Anki Files Included:</strong> Ready-to-import `.apkg` files for automatic spaced repetition on your phone or laptop.</li>
+                <li><strong>Printable PDFs:</strong> Clean, high-resolution formats if you prefer physical study tools.</li>
+                <li><strong>Step-by-step solutions:</strong> Not just the answer, but the <i>why</i> behind it.</li>
+            </ul>
+        </div>
     </section>
 
-    <!-- SECTION: THE VALUE (PRICE ANCHORING) -->
-    <section class="section">
+    <!-- SECTION: THE VALUE (Adicionado ID "pricing") -->
+    <section class="section" id="pricing">
         <div class="pricing-card">
             <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem; letter-spacing: -0.03em;">The Smart Deal</h2>
             
@@ -292,9 +442,12 @@
                 <p style="font-size: 1rem; color: #A0AABF; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: bold;">Bundle Price</p>
                 <div style="font-size: 4rem; font-weight: 800; color: var(--blue); line-height: 1;">$29.99</div>
                 
-                <a href="https://logicstudy.gumroad.com/l/ultimate-digital-sat-prep-bundle" class="cta-button" data-gumroad-overlay-checkout="true" style="width: 100%; margin-top: 2rem; padding: 1.5rem; font-size: 1.3rem;">
-                    Unlock The Full System
+                <a href="https://logicstudy.gumroad.com/l/ultimate-digital-sat-prep-bundle" class="cta-button" data-gumroad-overlay-checkout="true" style="margin-top: 1.5rem; width: 100%;">
+                    Get Instant Access — $29.99
                 </a>
+                <div class="trust-badges" style="margin-top: 1rem;">
+                    🔒 Secure Payment via Gumroad
+                </div>
             </div>
         </div>
     </section>
@@ -305,8 +458,11 @@
         <p style="color: #A0AABF; margin-bottom: 2rem;">Don't let another practice test defeat you. Build your pattern recognition today.</p>
         
         <a href="https://logicstudy.gumroad.com/l/ultimate-digital-sat-prep-bundle" class="cta-button" data-gumroad-overlay-checkout="true">
-            Download The Bundle Now
+            Get Instant Access — $29.99
         </a>
+        <div class="trust-badges" style="margin-top: 1rem;">
+            🔒 Secure Payment via Gumroad
+        </div>
     </footer>
 
 </body>
