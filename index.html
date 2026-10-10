@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Ultimate Digital SAT Prep Bundle | Logic Study Co.</title>
     
+    <!-- Pinterest Domain Verification -->
+    <meta name="p:domain_verify" content="9d5a213b480ab1470dc45388b06a091e"/>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CW6VS6K0XL"></script>
     <script>
@@ -49,17 +52,17 @@
             padding: 1rem 1.5rem;
             border-bottom: 1px solid rgba(255,255,255,0.05);
             display: flex;
-            flex-direction: column; /* No mobile, logo em cima, links em baixo */
+            flex-direction: column;
             align-items: center;
             gap: 1rem;
-            position: sticky; /* Fica fixa no topo ao fazer scroll */
+            position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
         .navbar img {
-            max-height: 60px; /* Ligeiramente menor para não ocupar muito espaço fixa */
+            max-height: 60px;
             width: auto;
             image-rendering: -webkit-optimize-contrast; 
         }
@@ -175,7 +178,6 @@
 
         /* PROBLEMA E SOLUÇÃO */
         .section {
-            /* Adicionado padding-top maior para compensar a navbar fixa ao clicar no link */
             padding: 6rem 1.5rem 4rem 1.5rem; 
             max-width: 900px;
             margin: 0 auto;
@@ -303,13 +305,80 @@
             font-weight: 500;
         }
 
-        /* FOOTER CTA */
+        /* PRE-FOOTER CTA */
         .bottom-cta {
             background-color: var(--navy);
             text-align: center;
-            padding: 4rem 1.5rem;
+            padding: 4rem 1.5rem 3rem 1.5rem;
             color: white;
             border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* SITE FOOTER */
+        .site-footer {
+            background-color: #061122; 
+            color: #7A859E;
+            padding: 4rem 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            max-width: 600px;
+        }
+
+        .footer-logo {
+            max-height: 50px;
+            image-rendering: -webkit-optimize-contrast;
+            opacity: 0.9;
+        }
+
+        .footer-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 2rem;
+            width: 100%;
+        }
+
+        .footer-links a {
+            color: #A0AABF;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .disclaimer {
+            font-size: 0.75rem;
+            opacity: 0.6;
+            max-width: 700px;
+            line-height: 1.5;
         }
 
         /* MEDIA QUERIES PARA DESKTOP */
@@ -364,12 +433,12 @@
             </div>
             
             <div class="hero-image">
-                <img src="Pink and White Modern Outfit Inspiration Pinterest Pin.png" alt="Ultimate Digital SAT Bundle on iPad and Laptop">
+                <img src="mockup.png" alt="Ultimate Digital SAT Bundle on iPad and Laptop">
             </div>
         </div>
     </header>
 
-    <!-- SECTION: THE PROBLEM (Adicionado ID "features") -->
+    <!-- SECTION: THE PROBLEM -->
     <section class="section" id="features">
         <div class="pain-points">
             <h3>❌ The "Illusion of Competence"</h3>
@@ -390,7 +459,7 @@
         </div>
     </section>
 
-    <!-- SECTION: WHAT YOU GET (Adicionado ID "whats-inside") -->
+    <!-- SECTION: WHAT YOU GET -->
     <section class="section" id="whats-inside" style="background-color: white; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB; max-width: 100%;">
         <div style="max-width: 900px; margin: 0 auto;">
             <h2 class="section-title">What's Inside The Mega Bundle?</h2>
@@ -409,7 +478,7 @@
         </div>
     </section>
 
-    <!-- SECTION: THE VALUE (Adicionado ID "pricing") -->
+    <!-- SECTION: THE VALUE (PRICING) -->
     <section class="section" id="pricing">
         <div class="pricing-card">
             <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem; letter-spacing: -0.03em;">The Smart Deal</h2>
@@ -443,7 +512,7 @@
                 <div style="font-size: 4rem; font-weight: 800; color: var(--blue); line-height: 1;">$29.99</div>
                 
                 <a href="https://logicstudy.gumroad.com/l/ultimate-digital-sat-prep-bundle" class="cta-button" data-gumroad-overlay-checkout="true" style="margin-top: 1.5rem; width: 100%;">
-                    Get Instant Access 
+                    Get Instant Access
                 </a>
                 <div class="trust-badges" style="margin-top: 1rem;">
                     🔒 Secure Payment via Gumroad
@@ -452,16 +521,37 @@
         </div>
     </section>
 
-    <!-- BOTTOM CTA -->
-    <footer class="bottom-cta">
+    <!-- PRE-FOOTER CTA -->
+    <div class="bottom-cta">
         <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Ready to hit that 1500+?</h2>
         <p style="color: #A0AABF; margin-bottom: 2rem;">Don't let another practice test defeat you. Build your pattern recognition today.</p>
         
         <a href="https://logicstudy.gumroad.com/l/ultimate-digital-sat-prep-bundle" class="cta-button" data-gumroad-overlay-checkout="true">
-            Get Instant Access 
+            Get Instant Access
         </a>
-        <div class="trust-badges" style="margin-top: 1rem;">
-            🔒 Secure Payment via Gumroad
+    </div>
+
+    <!-- MAIN SITE FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <!-- Brand & Description -->
+            <div class="footer-brand">
+                <img src="logoa.png" alt="Logic Study Co." class="footer-logo">
+                <p class="footer-description">
+                    Logic Study Co. is dedicated to creating high-yield, logic-based study materials that help high achievers study smarter, master test patterns, and unlock their full academic potential.
+                </p>
+            </div>
+
+            <!-- Links & Disclaimers -->
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <p class="disclaimer">
+                SAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this product.
+            </p>
+            <p>&copy; 2026 Logic Study Co. All rights reserved.</p>
         </div>
     </footer>
 
