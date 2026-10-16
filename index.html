@@ -162,6 +162,7 @@
             transition: transform 0.2s, background-color 0.2s;
             width: 100%;
             max-width: 400px;
+            text-align: center;
         }
 
         .cta-button:hover {
@@ -190,6 +191,16 @@
             margin-bottom: 2rem;
             font-weight: 800;
             letter-spacing: -0.03em;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.15rem;
+            color: #4B5563;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .pain-points {
@@ -223,6 +234,44 @@
         .feature-card h3 {
             color: var(--navy);
             margin-bottom: 0.5rem;
+        }
+
+        /* SEE IT IN ACTION (Videos) */
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .video-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #E5E7EB;
+        }
+        
+        .video-card video {
+            width: 100%;
+            display: block;
+            background-color: #f1f1f1;
+        }
+        
+        .video-caption {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .video-caption h3 {
+            color: var(--navy);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .video-caption p {
+            color: #6B7280;
+            font-size: 0.95rem;
         }
 
         /* BANNER ÚNICO */
@@ -303,6 +352,66 @@
             margin-top: 1.5rem; 
             font-size: 1.3rem; 
             font-weight: 500;
+        }
+        
+        /* INDIVIDUAL SUBJECTS GRID */
+        .individual-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .subject-card {
+            background-color: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        }
+        
+        .subject-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subject-card h3 {
+            color: var(--navy);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subject-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .secondary-btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--blue);
+            font-weight: 700;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--blue);
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .secondary-btn:hover {
+            background-color: var(--light-blue);
         }
 
         /* PRE-FOOTER CTA */
@@ -398,6 +507,12 @@
             .hero h1 { font-size: 3.2rem; }
             .cta-button { max-width: none; width: auto; }
             .solution-grid { grid-template-columns: 1fr 1fr; }
+            .video-grid { grid-template-columns: 1fr 1fr; }
+            .individual-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        @media (min-width: 1024px) {
+            .individual-grid { grid-template-columns: repeat(4, 1fr); }
         }
     </style>
 </head>
@@ -410,6 +525,7 @@
         </a>
         <ul class="nav-links">
             <li><a href="#features">Features</a></li>
+            <li><a href="#action">In Action</a></li>
             <li><a href="#whats-inside">What's Inside</a></li>
             <li><a href="#pricing">Pricing</a></li>
         </ul>
@@ -455,6 +571,38 @@
             <div class="feature-card">
                 <h3>⚡ Trap Recognition</h3>
                 <p>Learn the exact logic the College Board uses to trick overthinkers in the Reading section. Never fall for a "sounds plausible" answer again.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: SEE IT IN ACTION (Videos) -->
+    <section class="section" id="action" style="background-color: var(--off-white); padding-top: 2rem;">
+        <h2 class="section-title">Inside The Flashcard System</h2>
+        <p class="section-subtitle">We don't just give you the answers. Discover how our active recall method trains you to spot College Board traps instantly.</p>
+        
+        <div class="video-grid">
+            <!-- Video 1: Anki -->
+            <div class="video-card">
+                <video autoplay loop muted playsinline controls>
+                    <source src="ankivideo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-caption">
+                    <h3>Anki Spaced Repetition</h3>
+                    <p>Import our ready-to-use .apkg files to study on your phone or laptop. The algorithm shows you cards right before you forget them.</p>
+                </div>
+            </div>
+            
+            <!-- Video 2: PDF/Flashcards -->
+            <div class="video-card">
+                <video autoplay loop muted playsinline controls>
+                    <source src="pdfsvideo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-caption">
+                    <h3>Step-by-Step Logic</h3>
+                    <p>Never get stuck again. Every single math and reading card includes detailed, step-by-step logic explaining the trap.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -512,11 +660,59 @@
                 <div style="font-size: 4rem; font-weight: 800; color: var(--blue); line-height: 1;">$29.99</div>
                 
                 <a href="https://logicstudy.gumroad.com/l/ultimate-digital-sat-prep-bundle" class="cta-button" data-gumroad-overlay-checkout="true" style="margin-top: 1.5rem; width: 100%;">
-                    Get Instant Access
+                    Get The Complete System
                 </a>
                 <div class="trust-badges" style="margin-top: 1rem;">
                     🔒 Secure Payment via Gumroad
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: INDIVIDUAL SUBJECTS -->
+    <section class="section" id="individual" style="padding-top: 2rem;">
+        <h2 class="section-title">Need just one subject?</h2>
+        <p class="section-subtitle">Prefer to focus on one specific area? Choose the exact study materials you need to target your weak spots.</p>
+        
+        <div class="individual-grid">
+            <!-- Product 1 -->
+            <div class="subject-card">
+                <div>
+                    <div class="subject-icon">📐</div>
+                    <h3>Geometry, Trig & Stats</h3>
+                    <div class="subject-price">$14.99</div>
+                </div>
+                <a href="https://logicstudy.gumroad.com/l/sat-math-geometry-flashcards" class="secondary-btn" data-gumroad-overlay-checkout="true">Get Flashcards</a>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="subject-card">
+                <div>
+                    <div class="subject-icon">🧮</div>
+                    <h3>Algebra & Equations</h3>
+                    <div class="subject-price">$14.99</div>
+                </div>
+                <a href="https://logicstudy.gumroad.com/l/sat-math-algebra-flashcards" class="secondary-btn" data-gumroad-overlay-checkout="true">Get Flashcards</a>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="subject-card">
+                <div>
+                    <div class="subject-icon">📖</div>
+                    <h3>Vocab & Reading Strategies</h3>
+                    <div class="subject-price">$14.99</div>
+                </div>
+                <a href="https://logicstudy.gumroad.com/l/sat-english-vocabulary-reading-flashcards" class="secondary-btn" data-gumroad-overlay-checkout="true">Get Flashcards</a>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="subject-card">
+                <div>
+                    <div class="subject-icon">✍️</div>
+                    <h3>Grammar & Punctuation</h3>
+                    <div class="subject-price">$14.99</div>
+                </div>
+                <a href="https://logicstudy.gumroad.com/l/sat-english-grammar-flashcards" class="secondary-btn" data-gumroad-overlay-checkout="true">Get Flashcards</a>
             </div>
         </div>
     </section>
