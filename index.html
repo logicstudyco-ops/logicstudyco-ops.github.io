@@ -45,7 +45,28 @@
             color: var(--text-dark);
             line-height: 1.6;
         }
-
+/* PROMO BAR */
+        .promo-bar {
+            background-color: var(--alert-red);
+            color: white;
+            text-align: center;
+            padding: 0.6rem 1rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1001;
+        }
+        
+        .promo-bar span {
+            background-color: white;
+            color: var(--alert-red);
+            padding: 0.15rem 0.6rem;
+            border-radius: 4px;
+            font-weight: 800;
+            margin: 0 0.3rem;
+            display: inline-block;
+        }
         /* NAVBAR COM MENU */
         .navbar {
             background-color: var(--navy);
@@ -517,7 +538,10 @@
     </style>
 </head>
 <body>
-
+    <!-- PROMO BAR (NOVO: Atualizado com Early Black Friday e Data de Fim) -->
+    <div class="promo-bar">
+        🔥 Early Black Friday Sale: Use code <span>EARLYBF20</span> for 20% OFF the Mega Bundle! (Valid until Oct 31st)
+    </div>
     <!-- NAVBAR COM LOGO E LINKS -->
     <nav class="navbar">
         <a href="#" style="display: flex; align-items: center;">
