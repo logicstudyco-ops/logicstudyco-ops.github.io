@@ -47,27 +47,37 @@
             line-height: 1.6;
         }
 
-        /* PROMO BAR */
+        /* HEADER WRAPPER (Fixa Promo Bar e Menu juntos no topo) */
+        .header-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        /* PROMO BAR (Otimizada Laranja/Preto) */
         .promo-bar {
-            background-color: var(--alert-red);
-            color: white;
+            background-color: var(--promo-orange);
+            color: var(--promo-dark);
             text-align: center;
             padding: 0.6rem 1rem;
             font-size: 0.95rem;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.5px;
-            position: relative;
-            z-index: 1001;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
         }
         
         .promo-bar span {
-            background-color: white;
-            color: var(--alert-red);
-            padding: 0.15rem 0.6rem;
+            background-color: var(--promo-dark);
+            color: white;
+            padding: 0.2rem 0.6rem;
             border-radius: 4px;
             font-weight: 800;
             margin: 0 0.3rem;
             display: inline-block;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         /* NAVBAR COM MENU */
