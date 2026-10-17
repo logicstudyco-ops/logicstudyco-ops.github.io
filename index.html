@@ -26,6 +26,7 @@
             --blue: #3B82F6;
             --light-blue: #EFF6FF;
             --text-dark: #1F2937;
+            --alert-red: #DC2626;
         }
 
         * {
@@ -45,7 +46,8 @@
             color: var(--text-dark);
             line-height: 1.6;
         }
-/* PROMO BAR */
+
+        /* PROMO BAR */
         .promo-bar {
             background-color: var(--alert-red);
             color: white;
@@ -67,6 +69,7 @@
             margin: 0 0.3rem;
             display: inline-block;
         }
+
         /* NAVBAR COM MENU */
         .navbar {
             background-color: var(--navy);
@@ -234,7 +237,7 @@
         }
 
         .pain-points h3 {
-            color: #DC2626;
+            color: var(--alert-red);
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
@@ -349,6 +352,20 @@
             max-width: 600px; 
             margin: 0 auto; 
             box-shadow: 0 20px 40px rgba(10, 25, 47, 0.2);
+            position: relative;
+        }
+        
+        .discount-tag {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background-color: var(--alert-red);
+            color: white;
+            font-weight: 800;
+            padding: 0.8rem 1.2rem;
+            border-radius: 50px;
+            transform: rotate(5deg);
+            box-shadow: 0 4px 10px rgba(220, 38, 38, 0.4);
         }
 
         .pricing-card ul {
@@ -538,10 +555,12 @@
     </style>
 </head>
 <body>
+
     <!-- PROMO BAR (NOVO: Atualizado com Early Black Friday e Data de Fim) -->
     <div class="promo-bar">
         🔥 Early Black Friday Sale: Use code <span>EARLYBF20</span> for 20% OFF the Mega Bundle! (Valid until Oct 31st)
     </div>
+
     <!-- NAVBAR COM LOGO E LINKS -->
     <nav class="navbar">
         <a href="#" style="display: flex; align-items: center;">
@@ -549,8 +568,8 @@
         </a>
         <ul class="nav-links">
             <li><a href="#features">Features</a></li>
-            <li><a href="#action">In Action</a></li>
-            <li><a href="#whats-inside">What's Inside</a></li>
+            <li><a href="#action">Methodology</a></li>
+            <li><a href="#whats-inside">Inside</a></li>
             <li><a href="#pricing">Pricing</a></li>
         </ul>
     </nav>
@@ -599,10 +618,10 @@
         </div>
     </section>
 
-    <!-- SECTION: SEE IT IN ACTION (Videos) -->
+    <!-- SECTION: SEE IT IN ACTION -->
     <section class="section" id="action" style="background-color: var(--off-white); padding-top: 2rem;">
-        <h2 class="section-title">Inside The Flashcard System</h2>
-        <p class="section-subtitle">We don't just give you the answers. Discover how our active recall method trains you to spot College Board traps instantly.</p>
+        <h2 class="section-title">How Our Methodology Works</h2>
+        <p class="section-subtitle">Take a look inside the system. See how spaced repetition and step-by-step logic combine to rewire your pattern recognition.</p>
         
         <div class="video-grid">
             <!-- Video 1: Anki -->
@@ -650,9 +669,10 @@
         </div>
     </section>
 
-    <!-- SECTION: THE VALUE (PRICING) -->
+    <!-- SECTION: THE VALUE (PRICING com Texto de Validade) -->
     <section class="section" id="pricing">
         <div class="pricing-card">
+            <div class="discount-tag">Save 20% Today</div>
             <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem; letter-spacing: -0.03em;">The Smart Deal</h2>
             
             <ul>
@@ -673,15 +693,18 @@
                     <span>$14.99</span>
                 </li>
                 
-                <li class="total-price">
+                <li class="total-line" style="margin-top: 1.5rem;">
                     <span>Total Value</span>
-                    <span style="color: #EF4444; text-decoration: line-through;">$59,96</span>
+                    <span style="color: #EF4444; text-decoration: line-through;">$59.96</span>
                 </li>
             </ul>
 
             <div style="text-align: center; margin-top: 2rem;">
                 <p style="font-size: 1rem; color: #A0AABF; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: bold;">Bundle Price</p>
                 <div style="font-size: 4rem; font-weight: 800; color: var(--blue); line-height: 1;">$29.99</div>
+                
+                <!-- Alterado: Adicionada a data limite junto ao preço reduzido -->
+                <p style="color: var(--alert-red); font-size: 0.95rem; font-weight: 600; margin-top: 0.5rem;">(Only $23.99 with code EARLYBF20 — Ends Oct 31st)</p>
                 
                 <a href="https://logicstudy.gumroad.com/l/ultimate-digital-sat-prep-bundle" class="cta-button" data-gumroad-overlay-checkout="true" style="margin-top: 1.5rem; width: 100%;">
                     Get The Complete System
@@ -699,7 +722,6 @@
         <p class="section-subtitle">Prefer to focus on one specific area? Choose the exact study materials you need to target your weak spots.</p>
         
         <div class="individual-grid">
-            <!-- Product 1 -->
             <div class="subject-card">
                 <div>
                     <div class="subject-icon">📐</div>
@@ -709,7 +731,6 @@
                 <a href="https://logicstudy.gumroad.com/l/sat-math-geometry-flashcards" class="secondary-btn" data-gumroad-overlay-checkout="true">Get Flashcards</a>
             </div>
             
-            <!-- Product 2 -->
             <div class="subject-card">
                 <div>
                     <div class="subject-icon">🧮</div>
@@ -719,7 +740,6 @@
                 <a href="https://logicstudy.gumroad.com/l/sat-math-algebra-flashcards" class="secondary-btn" data-gumroad-overlay-checkout="true">Get Flashcards</a>
             </div>
             
-            <!-- Product 3 -->
             <div class="subject-card">
                 <div>
                     <div class="subject-icon">📖</div>
@@ -729,7 +749,6 @@
                 <a href="https://logicstudy.gumroad.com/l/sat-english-vocabulary-reading-flashcards" class="secondary-btn" data-gumroad-overlay-checkout="true">Get Flashcards</a>
             </div>
             
-            <!-- Product 4 -->
             <div class="subject-card">
                 <div>
                     <div class="subject-icon">✍️</div>
@@ -754,7 +773,6 @@
     <!-- MAIN SITE FOOTER -->
     <footer class="site-footer">
         <div class="footer-content">
-            <!-- Brand & Description -->
             <div class="footer-brand">
                 <img src="logoa.png" alt="Logic Study Co." class="footer-logo">
                 <p class="footer-description">
@@ -762,7 +780,6 @@
                 </p>
             </div>
 
-            <!-- Links & Disclaimers -->
             <ul class="footer-links">
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms of Service</a></li>
